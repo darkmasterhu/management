@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "ab36916d-6316-4191-9936-84300a110a1e",
+		"name": "Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List Machines",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/management/machines",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"management",
+						"machines"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Machine",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/management/machine/7b97d20e-9c96-4517-9739-49a003e740a6",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"management",
+						"machine",
+						"7b97d20e-9c96-4517-9739-49a003e740a6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Machine",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"My machine\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/management/machine",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"management",
+						"machine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Machine",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"My last updated machine\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/management/machine/7b97d20e-9c96-4517-9739-49a003e740a6",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"management",
+						"machine",
+						"7b97d20e-9c96-4517-9739-49a003e740a6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Machine",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/management/machine/7b97d20e-9c96-4517-9739-49a003e740a6",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"management",
+						"machine",
+						"7b97d20e-9c96-4517-9739-49a003e740a6"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

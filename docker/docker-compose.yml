@@ -1,0 +1,48 @@
+version: '3.3'
+
+services:
+
+  db:
+    image: postgres:latest
+    container_name: management-db-postgres
+    volumes:
+      - ./mnt/postgres/data:/var/lib/postgres
+      - ./dbscripts:/docker-entrypoint-initdb.d
+    restart: always
+    networks:
+      - app
+    environment:
+        POSTGRES_DB: management
+        POSTGRES_USER: postgres
+        POSTGRES_PASSWORD: postgres
+    logging:
+      options:
+        max-size: "10k"
+        max-file: "3"
+    ports:
+      - "5432:5432"
+
+  management:
+    depends_on:
+      - db
+    image: darkmasterhu/management:latest
+    container_name: management-app
+    networks:
+      - app
+    logging:
+      options:
+        max-size: "10k"
+        max-file: "3"
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_PLATFORM: postgres
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/management
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      SPRING_DATASOURCE_DRIVER-CLASS-NAME: org.postgresql.Driver
+
+networks:
+  app:
+
+
