@@ -54,6 +54,12 @@ gradlew build
 darkmasterhu/management:latest
 ```
 
+or with docker pull command:
+
+```
+docker pull darkmasterhu/management
+```
+
 - You can achieve the application source code on GitHub:
 
 ```
