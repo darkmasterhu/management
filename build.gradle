@@ -33,6 +33,9 @@ dependencies {
 	testCompile "org.mockito:mockito-core:2.+"
 	testCompile('org.mockito:mockito-junit-jupiter:2.18.3')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	testCompile('com.h2database:h2:1.4.194')
+	testCompile('org.hibernate:hibernate-entitymanager:5.2.9.Final')
+	testCompile('org.apache.commons:commons-lang3:3.11')
 }
 
 test {
